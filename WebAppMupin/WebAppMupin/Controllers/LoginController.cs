@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.UI.WebControls;
 using WebAppMupin.Models;
 
 namespace WebAppMupin.Controllers
@@ -12,12 +13,12 @@ namespace WebAppMupin.Controllers
         // GET: Login
         public ActionResult FormLogin()
         {
-            Login l = new Login();
+            Models.Login l = new Models.Login();
             return View(l);
         }
 
 
-        public ActionResult VerifyUser(Login l)
+        public ActionResult VerifyUser(Models.Login l)
         {
             if (l.username == null || l.password == null)
             {
@@ -34,16 +35,27 @@ namespace WebAppMupin.Controllers
                 }
                 else 
                 {   
-                    int verificaPassword = UtilityLogin.tryLogin(l.username, l.password);
+                    int verificaPassword = UtilityLogin.isSetted(l.username, l.password);
                     if (verificaPassword == 2)
                     {
-                        return RedirectToAction("Index", "User");
+                        bool tryLogin = UtilityLogin.tryLogin(l.username, l.password);
+                        if (tryLogin)
+                        {
+                            Session["utente"] = l.username;
+                            return RedirectToAction("Index", "User");    // login effettuato
+                        }
+                        else
+                        {
+                            l.message = "Login Fallito... Riprova";
+                            return View("formLogin", l);          //login fallito 
+                        }
                     }
                  
                     if (verificaPassword == 1)
                     {
                         setPassword set = new setPassword();
                         set.utente = l.username;
+                        Session["utente"] = l.username;
                         return View("setPassword", set);  // situazione di setPassword
                     }
                     else
@@ -78,7 +90,20 @@ namespace WebAppMupin.Controllers
             }
             else
             {
-                return View();
+                string utente = (string)Session["utente"];
+              bool insert=  UtilityLogin.insertPassword(set.Password, utente);
+              
+                if (!insert)
+                {
+                    set.errorMessage = "Qualcosa NON ha funzionato";        // internal error
+                    return View("setPassword", set);
+                }
+                else
+                {
+                    Models.Login l = new Models.Login();
+                    l.message = "Ripetere il Login per Accedere";      // password inserted 
+                    return View("formLogin", l);
+                }
             }
            
         }
