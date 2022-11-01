@@ -27,13 +27,10 @@ namespace WebAppMupin
         public static DataTable GetDataTable(string query,MySqlConnection cnn)
         {
             MySqlCommand cmd = new MySqlCommand(query,cnn);
-
             MySqlDataAdapter da = new MySqlDataAdapter(cmd);
             DataTable dt = new DataTable();
-
             cnn.Open();
-             da.SelectCommand = cmd;
-
+            da.SelectCommand = cmd;
             da.Fill(dt); 
             return dt;
         }

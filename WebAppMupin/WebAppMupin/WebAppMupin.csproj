@@ -216,6 +216,7 @@
     <Content Include="Content\bootstrap.rtl.min.css" />
     <Content Include="Content\Site.css" />
     <Content Include="Global.asax" />
+    <Content Include="Immagini\vettore-dell-icona-del-museo-isolato-su-fondo-bianco-concetto-di-logo-125790489.jpg" />
     <Content Include="info.txt" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
@@ -229,6 +230,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AdministratorController.cs" />
     <Compile Include="Controllers\UserController.cs" />
+    <Compile Include="Models\HomeUser.cs" />
     <Compile Include="Models\setPassword.cs" />
     <Compile Include="UtilityDB.cs" />
     <Compile Include="Controllers\LoginController.cs" />

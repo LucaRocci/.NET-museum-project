@@ -4,7 +4,8 @@
     "\\WebAppMupin",
     "\\WebAppMupin\\Controllers",
     "\\WebAppMupin\\Views",
-    "\\WebAppMupin\\Views\\Login"
+    "\\WebAppMupin\\Views\\Login",
+    "\\WebAppMupin\\Views\\User"
   ],
   "SelectedNode": "\\WebAppMupin.sln",
   "PreviewInSolutionExplorer": false
