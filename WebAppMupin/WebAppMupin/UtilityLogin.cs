@@ -1,4 +1,5 @@
 ﻿using MySql.Data.MySqlClient;
+using Renci.SshNet.Security.Cryptography;
 using System;
 using System.Collections.Generic;
 using System.Collections.Specialized;
@@ -93,6 +94,29 @@ namespace WebAppMupin
                 return false;
             }
            
+        }
+
+        public static bool verifyAdmin(string username)
+        {
+            MySqlConnection cnn = UtilityDB.connection();
+            string queryVerify = "SELECT username FROM utenti WHERE DefaultPassword = password;";
+            MySqlCommand mySqlCommand = cnn.CreateCommand();
+            mySqlCommand.CommandText = queryVerify;
+            cnn.Open();
+            MySqlDataReader reader= mySqlCommand.ExecuteReader();
+            reader.Read();
+            if (reader.HasRows)
+            {
+                if ((string)reader["username"] == username)
+                    return true; // is administrator
+                else
+                    return false;// not an administrator
+            }
+            else
+            {
+                reader.Close();
+                return false;   // not found 
+            }
         }
 
         public static bool insertPassword(string password,string username)

@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Configuration;
+using System.Data;
 using System.Linq;
 using System.Web;
 using System.Web.Configuration;
@@ -21,6 +22,20 @@ namespace WebAppMupin
                 return null;
             }
 
+        }
+
+        public static DataTable GetDataTable(string query,MySqlConnection cnn)
+        {
+            MySqlCommand cmd = new MySqlCommand(query,cnn);
+
+            MySqlDataAdapter da = new MySqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+
+            cnn.Open();
+             da.SelectCommand = cmd;
+
+            da.Fill(dt); 
+            return dt;
         }
     }
 }

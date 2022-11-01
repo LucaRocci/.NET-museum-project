@@ -1,5 +1,7 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;
+using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -11,7 +13,11 @@ namespace WebAppMupin.Controllers
         // GET: User
         public ActionResult Index()
         {
-            return View("HomeUser");
+           MySqlConnection cnn= UtilityDB.connection();
+            string query = "SELECT Nome,immagine FROM categoriereperti;";
+            DataTable dt = UtilityDB.GetDataTable(query,cnn);
+
+            return View("HomeUser",dt);
         }
     }
 }

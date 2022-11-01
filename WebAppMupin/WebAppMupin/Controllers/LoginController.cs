@@ -27,6 +27,21 @@ namespace WebAppMupin.Controllers
             }
             else
             {
+                bool isAdmin = UtilityLogin.verifyAdmin(l.username);
+                if (isAdmin)
+                {
+                    bool tryLogin = UtilityLogin.tryLogin(l.username, l.password);
+                    if (tryLogin)
+                    {
+                        Session["Administrator"] = l.username;
+                        return RedirectToAction("Index", "Administrator");      // administrator logged 
+                    }
+                    else
+                    {
+                        l.message = "Login Fallito... Riprova";
+                        return View("formLogin", l);          //login fallito 
+                    }
+                }
                 bool esisteUser = UtilityLogin.verifiyUser(l.username);
                 if (!esisteUser)
                 {
