@@ -230,6 +230,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AdministratorController.cs" />
     <Compile Include="Controllers\UserController.cs" />
+    <Compile Include="Models\Computer.cs" />
     <Compile Include="Models\HomeUser.cs" />
     <Compile Include="Models\setPassword.cs" />
     <Compile Include="UtilityDB.cs" />
@@ -272,6 +273,7 @@
     <Content Include="Scripts\bootstrap.bundle.min.js.map" />
     <Content Include="Scripts\bootstrap.bundle.js.map" />
     <Content Include="Views\Administrator\HomeAdministrator.cshtml" />
+    <Content Include="Views\User\ViewReperti.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

@@ -22,7 +22,7 @@
     <h3> Benvenuto nella sezione dell'amministratore</h3>
 
     <div class="container">
-        <button id="logout" type="button" class="btn btn-info">Logout</button>
+        <button id="logout" type="submit" class="btn btn-info" onclick="location.href='/Administrator/logout'">Logout</button>
     </div>
     <hr />
     <div class="table-responsive">
@@ -44,8 +44,8 @@
                     <td>@dr["Nome"].ToString()</td>
                     <td>@dr["Cognome"].ToString()</td>
                     <td>@dr["username"].ToString()</td>
-                    <td><button type="button" class="btn btn-warning">Reset Password</button></td>
-                    <td><button type="button" class="btn btn-danger">Elimina Utente</button></td>
+                    <td><button type="submit"   onclick="location.href ='/Administrator/Reset?username=@dr["username"].ToString()'"  class="btn btn-warning">Reset Password</button></td>
+                    <td><button type="submit" onclick="location.href ='/Administrator/DeleteUser?username=@dr["username"].ToString()'" class="btn btn-danger">Elimina Utente</button></td>
                 </tr>
                 }
 

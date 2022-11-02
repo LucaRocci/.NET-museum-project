@@ -12,11 +12,13 @@
     <style>
         #logout {
             float: right;
-            margin: 1%
+            position:absolute;
+            margin-top: 1%
         }
 
         .card:hover {
             transform: scale(1.5);
+            z-index:1;
         }
 
         .card {
@@ -35,14 +37,14 @@
 </head>
 <body>
    
-    <button type="submit" id="logout" class="btn btn-warning" onclick.href='/User/logout' >Logout</button>
+    <button type="submit" id="logout" class="btn btn-warning"  onclick="location.href='/User/logout'" >Logout</button>
     <hr>
     <main>
         <!--  blocco da generare -->
         @foreach (HomeUser homeUser in Model)
         {
             <div class="row">
-                <div class="col-sm-12 d-flex justify-content-center">
+                <div class="col-sm-12 d-flex justify-content-center" onclick="location.href ='/User/Reperti?categoria=@homeUser.nome'">
 
                     <div class="card" id="@homeUser.nome" style="width: 18rem;">
 

@@ -50,7 +50,15 @@ namespace WebAppMupin.Controllers
         public ActionResult logout()
         {
 
-            return RedirectToAction("Login", "FormLogin");
+            return RedirectToAction("formLogin", "Login");
+        }
+
+        public ActionResult Reperti(string categoria)
+        {
+         categoria= categoria[0].ToString().ToUpper() + categoria.Substring(1);
+
+            return View("ViewReperti");
+
         }
     }
 }
