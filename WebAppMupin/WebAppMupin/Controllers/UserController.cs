@@ -55,7 +55,20 @@ namespace WebAppMupin.Controllers
 
         public ActionResult Reperti(string categoria)
         {
-         categoria= categoria[0].ToString().ToUpper() + categoria.Substring(1);
+            switch (categoria)
+            {
+                case "computer":
+                    {
+                        Computer c = new Computer();
+                        break;
+                    }
+                case "":
+                    
+            }
+            // Possibili soluzioni
+            //switch tra i model --> creo l'oggetto --> query --> metto i dati in una lista --> passo la lista di model  [più macchinoso , uso i modelli e devo avere una vista per reperto]
+            //query sulla categoria -->  dati in una dataTable --> passo la tataTable   [più semplice ma non uso modelli e ho meno controllo]
+
 
             return View("ViewReperti");
 

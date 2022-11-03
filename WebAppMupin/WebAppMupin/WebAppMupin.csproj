@@ -230,8 +230,10 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AdministratorController.cs" />
     <Compile Include="Controllers\UserController.cs" />
-    <Compile Include="Models\Computer.cs" />
+    <Compile Include="Models\Reperti\Computer.cs" />
     <Compile Include="Models\HomeUser.cs" />
+    <Compile Include="Models\Reperti\Libro.cs" />
+    <Compile Include="Models\Reperti\Periferica.cs" />
     <Compile Include="Models\setPassword.cs" />
     <Compile Include="UtilityDB.cs" />
     <Compile Include="Controllers\LoginController.cs" />
