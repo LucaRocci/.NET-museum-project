@@ -35,6 +35,16 @@ namespace WebAppMupin
             return dt;
         }
 
+        public static MySqlDataReader getDataReader(string query,MySqlConnection cnn)
+        {
+            //devo costruire la query e restituire il dataReader 
+        }
+
       
+        public static string buildQuerySelect(string categoria)
+        {
+
+            return query;
+        }
     }
 }

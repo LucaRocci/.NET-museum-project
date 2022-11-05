@@ -7,6 +7,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using WebAppMupin.Models;
+using WebAppMupin.Models.Reperti;
 
 namespace WebAppMupin.Controllers
 {
@@ -55,23 +56,45 @@ namespace WebAppMupin.Controllers
 
         public ActionResult Reperti(string categoria)
         {
+            MySqlConnection cnn = UtilityDB.connection();
             switch (categoria)
             {
                 case "computer":
                     {
-                        Computer c = new Computer();
+                        List<Computer> listComp = UtilityDB.
                         break;
                     }
-                case "":
-                    
+                case "rivista":
+                    {
+                        Rivista r = new Rivista();
+                        break;
+
+                    }
+                case "software":
+                    {
+                        Software s = new Software();
+                        break;
+
+                    }
+                case "libro":
+                    {
+                        Libro l = new Libro();
+                        break;
+                    }
+                case "periferica":
+                    {
+                        Periferica p = new Periferica();
+                        break;
+                    }
+                default:
+                    {
+                        return RedirectToAction("Index", "User");
+                  
+                    }
+
             }
-            // Possibili soluzioni
-            //switch tra i model --> creo l'oggetto --> query --> metto i dati in una lista --> passo la lista di model  [più macchinoso , uso i modelli e devo avere una vista per reperto]
-            //query sulla categoria -->  dati in una dataTable --> passo la tataTable   [più semplice ma non uso modelli e ho meno controllo]
 
-
-            return View("ViewReperti");
-
+         
         }
     }
 }

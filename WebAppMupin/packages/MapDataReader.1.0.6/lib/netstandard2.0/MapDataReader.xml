@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>MapDataReader</name>
+    </assembly>
+    <members>
+        <member name="M:MapDataReader.MapperGenerator.GetDeterministicHashCode(System.String)">
+            <summary>
+            returns case-insensitive (same hash for upper/lower) and "deterministic" hash (same with every run)
+            </summary>
+        </member>
+    </members>
+</doc>
