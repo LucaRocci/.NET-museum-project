@@ -57,11 +57,15 @@ namespace WebAppMupin.Controllers
         public ActionResult Reperti(string categoria)
         {
             MySqlConnection cnn = UtilityDB.connection();
+            List<string> colonne= UtilityDB.getDataColumn(cnn, categoria);
+            string query = UtilityReperti.generateQuerySelect(categoria,colonne);
+
+
             switch (categoria)
             {
                 case "computer":
                     {
-                        List<Computer> listComp = UtilityDB.
+                        List<Computer> listComp = UtilityReperti.getDataReader(query,cnn).ToComputer();
                         break;
                     }
                 case "rivista":

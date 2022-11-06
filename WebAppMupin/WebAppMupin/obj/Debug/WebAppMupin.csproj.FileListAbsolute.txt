@@ -433,3 +433,4 @@ Z:\WINDOWS\project-museum\.NET-museum-project\WebAppMupin\WebAppMupin\obj\Debug\
 Z:\WINDOWS\project-museum\.NET-museum-project\WebAppMupin\WebAppMupin\obj\Debug\WebAppMupin.csproj.CopyComplete
 Z:\WINDOWS\project-museum\.NET-museum-project\WebAppMupin\WebAppMupin\obj\Debug\WebAppMupin.dll
 Z:\WINDOWS\project-museum\.NET-museum-project\WebAppMupin\WebAppMupin\obj\Debug\WebAppMupin.pdb
+C:\Users\paolo\Desktop\Luca\ITS\MUPIN-Project\.NET-museum-project\WebAppMupin\WebAppMupin\obj\Debug\WebAppMupin.GeneratedMSBuildEditorConfig.editorconfig

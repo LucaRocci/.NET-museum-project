@@ -35,16 +35,22 @@ namespace WebAppMupin
             return dt;
         }
 
-        public static MySqlDataReader getDataReader(string query,MySqlConnection cnn)
-        {
-            //devo costruire la query e restituire il dataReader 
-        }
 
-      
-        public static string buildQuerySelect(string categoria)
-        {
+        public static List<string> getDataColumn(MySqlConnection cnn,string tabella)
+        { 
+            string query = "SELECT `COLUMN_NAME` AS 'colonne' FROM `INFORMATION_SCHEMA`.`COLUMNS` WHERE `TABLE_SCHEMA`='museoinformaticatest' AND `TABLE_NAME`= @table;";
+            MySqlCommand cmd= new MySqlCommand(query,cnn);
+            cmd.Parameters.AddWithValue("@table",tabella);
+            MySqlDataReader reader = cmd.ExecuteReader();
+            List<string> colonne = new List<string>();
 
-            return query;
+            while (reader.Read())
+            {
+                colonne.Add((string)reader["colonne"]);
+            }
+
+            return colonne;
         }
+   
     }
 }

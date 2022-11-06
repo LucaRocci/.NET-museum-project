@@ -2,8 +2,7 @@
   "ExpandedNodes": [
     "",
     "\\WebAppMupin",
-    "\\WebAppMupin\\Controllers",
-    "\\WebAppMupin\\Views",
+    "\\WebAppMupin\\Models\\Reperti",
     "\\WebAppMupin\\Views\\Login",
     "\\WebAppMupin\\Views\\User"
   ],
