@@ -1,10 +1,7 @@
 {
   "ExpandedNodes": [
     "",
-    "\\WebAppMupin",
-    "\\WebAppMupin\\Models\\Reperti",
-    "\\WebAppMupin\\Views\\Login",
-    "\\WebAppMupin\\Views\\User"
+    "\\WebAppMupin"
   ],
   "SelectedNode": "\\WebAppMupin.sln",
   "PreviewInSolutionExplorer": false

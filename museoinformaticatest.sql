@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Creato il: Nov 01, 2022 alle 21:29
+-- Creato il: Nov 06, 2022 alle 21:27
 -- Versione del server: 10.4.24-MariaDB
 -- Versione PHP: 8.1.6
 
@@ -61,26 +61,23 @@ CREATE TABLE `computer` (
   `velocita_HZ` varchar(6) NOT NULL,
   `RAM` varchar(15) NOT NULL,
   `Hard_disk` varchar(10) DEFAULT NULL,
-  `sistema_operativo` varchar(15) DEFAULT NULL,
-  `note` text DEFAULT NULL,
-  `URL` varchar(100) DEFAULT NULL,
-  `tag` text DEFAULT NULL
+  `sistema_operativo` varchar(15) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dump dei dati per la tabella `computer`
 --
 
-INSERT INTO `computer` (`Id_catalogo`, `Identificativo`, `Nome_modello`, `anno`, `CPU`, `velocita_HZ`, `RAM`, `Hard_disk`, `sistema_operativo`, `note`, `URL`, `tag`) VALUES
-(1, 'Comp23332', 'asus', '2000', 'I7', '2,78', '5 TB ', '1GB', 'linux', '', 'www.apple.it', ''),
-(2, 'Comp43534', 'asus', '2000', 'I7', '2,78', '5 TB ', '1GB', 'linux', '', 'www.apple.it', ''),
-(4, 'Comp989', 'asus', '2000', 'I7', '2,78', '5 TB ', '1GB', 'linux', '', 'www.apple.it', ''),
-(5, 'Comp324432', 'asus', '2000', 'I7', '2,78', '5 TB ', '1GB', 'linux', '', 'www.apple.it', ''),
-(6, 'Comp5454', 'asus', '2000', 'I7', '2,78', '5 TB ', '1GB', 'linux', '', 'www.apple.it', ''),
-(8, 'comp4789', 'asus', '2000', 'I7', '2,78', '5 TB ', '1GB', 'linux', '', 'www.apple.it', ''),
-(10, 'Comp232', 'asus', '2000', 'I7', '2,78', '5 TB ', '1GB', 'linux', '', 'www.apple.it', ''),
-(19, 'Comp444444', 'asus', '2000', 'I7', '2,78', '5 TB ', '1GB', 'linux', '', 'www.apple.it', ''),
-(21, 'Comp1111', 'asus', '2000', 'I7', '2,78', '5 TB ', '1GB', 'linux', '', 'www.apple.it', '');
+INSERT INTO `computer` (`Id_catalogo`, `Identificativo`, `Nome_modello`, `anno`, `CPU`, `velocita_HZ`, `RAM`, `Hard_disk`, `sistema_operativo`) VALUES
+(1, 'Comp23332', 'asus', '2000', 'I7', '2,78', '5 TB ', '1GB', 'linux'),
+(2, 'Comp43534', 'asus', '2000', 'I7', '2,78', '5 TB ', '1GB', 'linux'),
+(4, 'Comp989', 'asus', '2000', 'I7', '2,78', '5 TB ', '1GB', 'linux'),
+(5, 'Comp324432', 'asus', '2000', 'I7', '2,78', '5 TB ', '1GB', 'linux'),
+(6, 'Comp5454', 'asus', '2000', 'I7', '2,78', '5 TB ', '1GB', 'linux'),
+(8, 'comp4789', 'asus', '2000', 'I7', '2,78', '5 TB ', '1GB', 'linux'),
+(10, 'Comp232', 'asus', '2000', 'I7', '2,78', '5 TB ', '1GB', 'linux'),
+(19, 'Comp444444', 'asus', '2000', 'I7', '2,78', '5 TB ', '1GB', 'linux'),
+(21, 'Comp1111', 'asus', '2000', 'I7', '2,78', '5 TB ', '1GB', 'linux');
 
 -- --------------------------------------------------------
 
@@ -96,19 +93,16 @@ CREATE TABLE `libro` (
   `casa_editrice` varchar(20) NOT NULL,
   `anno_pubblicazione` varchar(4) NOT NULL,
   `numero_pagine` varchar(5) NOT NULL,
-  `ISBN` varchar(30) NOT NULL,
-  `note` text DEFAULT NULL,
-  `URL` varchar(100) DEFAULT NULL,
-  `tag` text DEFAULT NULL
+  `ISBN` varchar(30) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dump dei dati per la tabella `libro`
 --
 
-INSERT INTO `libro` (`Id_catalogo`, `Identificativo`, `titolo`, `autori`, `casa_editrice`, `anno_pubblicazione`, `numero_pagine`, `ISBN`, `note`, `URL`, `tag`) VALUES
-(1, 'li898', 'la divina commedia', 'Dante Alighieri', 'loaker', '0', '456', 'IS88888htht', 'comune,molte copie disponibili', 'www.dante.it', 'dante,libro,comune'),
-(2, 'li655656', 'l', 'omero ', 'hoepli', '0', '369', 'OOOOO11Q888II', 'rovinato ', 'www.io.com', 'libro,omero');
+INSERT INTO `libro` (`Id_catalogo`, `Identificativo`, `titolo`, `autori`, `casa_editrice`, `anno_pubblicazione`, `numero_pagine`, `ISBN`) VALUES
+(1, 'li898', 'la divina commedia', 'Dante Alighieri', 'loaker', '0', '456', 'IS88888htht'),
+(2, 'li655656', 'l', 'omero ', 'hoepli', '0', '369', 'OOOOO11Q888II');
 
 -- --------------------------------------------------------
 
@@ -120,20 +114,32 @@ CREATE TABLE `periferica` (
   `Id_catalogo` int(11) NOT NULL,
   `Identificativo` varchar(20) NOT NULL,
   `nome_modello` varchar(25) NOT NULL,
-  `tipologia` varchar(20) NOT NULL,
-  `note` text DEFAULT NULL,
-  `URL` varchar(100) DEFAULT NULL,
-  `tag` text DEFAULT NULL
+  `tipologia` varchar(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dump dei dati per la tabella `periferica`
 --
 
-INSERT INTO `periferica` (`Id_catalogo`, `Identificativo`, `nome_modello`, `tipologia`, `note`, `URL`, `tag`) VALUES
-(1, 'perif9899', 'logitech atm ', 'mouse ', 'funzionate ', 'www.logitech.it ', 'funzionante,periferica,mouse '),
-(2, 'perif4565', 'arm 3 ', 'tastiera ', NULL, 'www.arm.com/modifica', 'tastiera,perfiferica'),
-(3, 'perifM02', 'lenovo', 'tastiera', 'non funzionante  ', NULL, NULL);
+INSERT INTO `periferica` (`Id_catalogo`, `Identificativo`, `nome_modello`, `tipologia`) VALUES
+(1, 'perif9899', 'logitech atm ', 'mouse '),
+(2, 'perif4565', 'arm 3 ', 'tastiera '),
+(3, 'perifM02', 'lenovo', 'tastiera');
+
+-- --------------------------------------------------------
+
+--
+-- Struttura della tabella `repertodetail`
+--
+
+CREATE TABLE `repertodetail` (
+  `ID` int(11) NOT NULL,
+  `identificativoReperto` varchar(20) NOT NULL,
+  `note` varchar(100) DEFAULT NULL,
+  `URL` varchar(75) DEFAULT NULL,
+  `tag` varchar(100) DEFAULT NULL,
+  `immagine` longblob DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -147,21 +153,18 @@ CREATE TABLE `rivista` (
   `titolo` varchar(30) NOT NULL,
   `numero_rivista` text NOT NULL,
   `anno` varchar(4) NOT NULL,
-  `casa_editrice` varchar(20) NOT NULL,
-  `note` text DEFAULT NULL,
-  `URL` varchar(100) DEFAULT NULL,
-  `tag` text DEFAULT NULL
+  `casa_editrice` varchar(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dump dei dati per la tabella `rivista`
 --
 
-INSERT INTO `rivista` (`Id_catalogo`, `Identificativo`, `titolo`, `numero_rivista`, `anno`, `casa_editrice`, `note`, `URL`, `tag`) VALUES
-(1, 'rivi655656', 'l\'informatico', '5456', '1952', 'loaker', 'molte copie a disposizione ', NULL, 'rivista,comune'),
-(2, 'rivi2332', 'l\'odissea', '87678l587', '1999', 'hoepli', '4555', 'www.l\'odissea.it', 'rivista,l\'odissea'),
-(3, 'soft3456', 'the grand tour', '544565', '2000', '789Io', 'ciao tuttu', 'www.it.com', NULL),
-(4, 'rivi456', 'l\'odissea modificata', '544565', '2000', '789Io', 'nessuna', NULL, NULL);
+INSERT INTO `rivista` (`Id_catalogo`, `Identificativo`, `titolo`, `numero_rivista`, `anno`, `casa_editrice`) VALUES
+(1, 'rivi655656', 'l\'informatico', '5456', '1952', 'loaker'),
+(2, 'rivi2332', 'l\'odissea', '87678l587', '1999', 'hoepli'),
+(3, 'soft3456', 'the grand tour', '544565', '2000', '789Io'),
+(4, 'rivi456', 'l\'odissea modificata', '544565', '2000', '789Io');
 
 -- --------------------------------------------------------
 
@@ -175,20 +178,17 @@ CREATE TABLE `software` (
   `titolo` varchar(25) NOT NULL,
   `sistema_operativo` varchar(25) NOT NULL,
   `tipo_software` varchar(25) NOT NULL,
-  `supporto` varchar(25) NOT NULL,
-  `note` text DEFAULT NULL,
-  `URL` varchar(100) DEFAULT NULL,
-  `tag` text DEFAULT NULL
+  `supporto` varchar(25) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dump dei dati per la tabella `software`
 --
 
-INSERT INTO `software` (`Id_catalogo`, `Identificativo`, `titolo`, `sistema_operativo`, `tipo_software`, `supporto`, `note`, `URL`, `tag`) VALUES
-(1, 'soft32324', 'mariocart 1', 'windows ', 'gioco ', 'floppy', '', 'www.io.com', 'gioco,mariokart,software'),
-(2, 'soft7667', 'emule ', 'linux', 'emulatore', 'CD ', 'non funzionante ', 'www.emule.it ', NULL),
-(3, 'soft3456', 'the grand tour', 'android', 'montaggio video', 'chiavetta', 'nessuna', 'www.it.com', 'software,video');
+INSERT INTO `software` (`Id_catalogo`, `Identificativo`, `titolo`, `sistema_operativo`, `tipo_software`, `supporto`) VALUES
+(1, 'soft32324', 'mariocart 1', 'windows ', 'gioco ', 'floppy'),
+(2, 'soft7667', 'emule ', 'linux', 'emulatore', 'CD '),
+(3, 'soft3456', 'the grand tour', 'android', 'montaggio video', 'chiavetta');
 
 -- --------------------------------------------------------
 
@@ -248,6 +248,13 @@ ALTER TABLE `periferica`
   ADD UNIQUE KEY `Identificativo` (`Identificativo`);
 
 --
+-- Indici per le tabelle `repertodetail`
+--
+ALTER TABLE `repertodetail`
+  ADD PRIMARY KEY (`ID`),
+  ADD KEY `identificativoReperto` (`identificativoReperto`);
+
+--
 -- Indici per le tabelle `rivista`
 --
 ALTER TABLE `rivista`
@@ -272,12 +279,6 @@ ALTER TABLE `utenti`
 --
 
 --
--- AUTO_INCREMENT per la tabella `categoriereperti`
---
-ALTER TABLE `categoriereperti`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
-
---
 -- AUTO_INCREMENT per la tabella `computer`
 --
 ALTER TABLE `computer`
@@ -293,7 +294,13 @@ ALTER TABLE `libro`
 -- AUTO_INCREMENT per la tabella `periferica`
 --
 ALTER TABLE `periferica`
-  MODIFY `Id_catalogo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `Id_catalogo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- AUTO_INCREMENT per la tabella `repertodetail`
+--
+ALTER TABLE `repertodetail`
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT per la tabella `rivista`
@@ -312,6 +319,20 @@ ALTER TABLE `software`
 --
 ALTER TABLE `utenti`
   MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
+-- Limiti per le tabelle scaricate
+--
+
+--
+-- Limiti per la tabella `repertodetail`
+--
+ALTER TABLE `repertodetail`
+  ADD CONSTRAINT `repertodetail_ibfk_1` FOREIGN KEY (`identificativoReperto`) REFERENCES `computer` (`Identificativo`),
+  ADD CONSTRAINT `repertodetail_ibfk_2` FOREIGN KEY (`identificativoReperto`) REFERENCES `libro` (`Identificativo`),
+  ADD CONSTRAINT `repertodetail_ibfk_3` FOREIGN KEY (`identificativoReperto`) REFERENCES `periferica` (`Identificativo`),
+  ADD CONSTRAINT `repertodetail_ibfk_4` FOREIGN KEY (`identificativoReperto`) REFERENCES `software` (`Identificativo`),
+  ADD CONSTRAINT `repertodetail_ibfk_5` FOREIGN KEY (`identificativoReperto`) REFERENCES `rivista` (`Identificativo`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
