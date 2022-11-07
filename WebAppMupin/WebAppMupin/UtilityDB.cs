@@ -36,11 +36,12 @@ namespace WebAppMupin
         }
 
 
-        public static List<string> getDataColumn(MySqlConnection cnn,string tabella)
+        public static List<string> getTableColumn(MySqlConnection cnn,string tabella)
         { 
             string query = "SELECT `COLUMN_NAME` AS 'colonne' FROM `INFORMATION_SCHEMA`.`COLUMNS` WHERE `TABLE_SCHEMA`='museoinformaticatest' AND `TABLE_NAME`= @table;";
             MySqlCommand cmd= new MySqlCommand(query,cnn);
             cmd.Parameters.AddWithValue("@table",tabella);
+            cnn.Open();
             MySqlDataReader reader = cmd.ExecuteReader();
             List<string> colonne = new List<string>();
 
@@ -48,7 +49,7 @@ namespace WebAppMupin
             {
                 colonne.Add((string)reader["colonne"]);
             }
-
+            cnn.Close();
             return colonne;
         }
    

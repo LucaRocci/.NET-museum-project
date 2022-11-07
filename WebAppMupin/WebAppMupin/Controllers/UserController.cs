@@ -57,48 +57,50 @@ namespace WebAppMupin.Controllers
         public ActionResult Reperti(string categoria)
         {
             MySqlConnection cnn = UtilityDB.connection();
-            List<string> colonne= UtilityDB.getDataColumn(cnn, categoria);
+            List<string> colonne= UtilityDB.getTableColumn(cnn, categoria);
             string query = UtilityReperti.generateQuerySelect(categoria,colonne);
-
-
             switch (categoria)
             {
                 case "computer":
                     {
-                        List<Computer> listComp = UtilityReperti.getDataReader(query,cnn).ToComputer();
+                        DataTable dt=UtilityDB.GetDataTable(query, cnn);
+                        return View("ViewReperti",dt);
                         break;
                     }
                 case "rivista":
                     {
-                        Rivista r = new Rivista();
+                        DataTable dt = UtilityDB.GetDataTable(query, cnn);
+                        return View("ViewReperti", dt);
                         break;
 
                     }
                 case "software":
                     {
-                        Software s = new Software();
+                        DataTable dt = UtilityDB.GetDataTable(query, cnn);
+                        return View("ViewReperti", dt);
                         break;
 
                     }
                 case "libro":
                     {
-                        Libro l = new Libro();
+                        DataTable dt = UtilityDB.GetDataTable(query, cnn);
+                        return View("ViewReperti", dt);
                         break;
                     }
                 case "periferica":
                     {
-                        Periferica p = new Periferica();
+                        DataTable dt = UtilityDB.GetDataTable(query, cnn);
+                        return View("ViewReperti", dt);
                         break;
                     }
                 default:
                     {
-                        return RedirectToAction("Index", "User");
-                  
+                        break;
+                                 
                     }
-
             }
+            return RedirectToAction("Index", "User");
 
-         
         }
     }
 }

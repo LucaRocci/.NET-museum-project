@@ -22,17 +22,11 @@ namespace WebAppMupin
                 }
             }
             string querydef=  query.Remove(query.Length - 1);
-            querydef += "FROM " + categoria;
+            querydef += " FROM " + categoria;
             return querydef;
         }
 
-        public static  MySqlDataReader getDataReader(string query,MySqlConnection cnn)
-        {
-            MySqlCommand cmd =new MySqlCommand(query,cnn);
-            MySqlDataReader reader = cmd.ExecuteReader();
-            return reader;
-            
-        }
-        
+   
+      
     }
 }

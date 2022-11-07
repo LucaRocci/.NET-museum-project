@@ -1,12 +1,11 @@
-﻿using MapDataReader;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
 namespace WebAppMupin.Models.Reperti
 {
-    [GenerateDataReaderMapper]
+
     public class Rivista
     {
         public string Identificativo { get; set; }
