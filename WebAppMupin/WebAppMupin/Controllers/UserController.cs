@@ -59,37 +59,39 @@ namespace WebAppMupin.Controllers
             MySqlConnection cnn = UtilityDB.connection();
             List<string> colonne= UtilityDB.getTableColumn(cnn, categoria);
             string query = UtilityReperti.generateQuerySelect(categoria,colonne);
+            DataTable dt = null;
+            // rivedere il controller 
             switch (categoria)
             {
                 case "computer":
                     {
-                        DataTable dt=UtilityDB.GetDataTable(query, cnn);
+                         dt=UtilityDB.GetDataTable(query, cnn);
                         return View("ViewReperti",dt);
                         break;
                     }
                 case "rivista":
                     {
-                        DataTable dt = UtilityDB.GetDataTable(query, cnn);
+                         dt = UtilityDB.GetDataTable(query, cnn);
                         return View("ViewReperti", dt);
                         break;
 
                     }
                 case "software":
                     {
-                        DataTable dt = UtilityDB.GetDataTable(query, cnn);
+                         dt = UtilityDB.GetDataTable(query, cnn);
                         return View("ViewReperti", dt);
                         break;
 
                     }
                 case "libro":
                     {
-                        DataTable dt = UtilityDB.GetDataTable(query, cnn);
+                         dt = UtilityDB.GetDataTable(query, cnn);
                         return View("ViewReperti", dt);
                         break;
                     }
                 case "periferica":
                     {
-                        DataTable dt = UtilityDB.GetDataTable(query, cnn);
+                        dt = UtilityDB.GetDataTable(query, cnn);
                         return View("ViewReperti", dt);
                         break;
                     }
