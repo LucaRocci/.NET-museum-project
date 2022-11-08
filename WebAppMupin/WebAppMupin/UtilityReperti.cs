@@ -26,6 +26,19 @@ namespace WebAppMupin
             return querydef;
         }
 
+        public static List<string> getTableName(MySqlConnection cnn)
+        {
+            string query = "SHOW TABLES;";
+            MySqlCommand cmd = new MySqlCommand(query, cnn);
+            List<string> tables = new List<string>();
+            cnn.Open();
+            MySqlDataReader read= cmd.ExecuteReader();
+            while (read.Read())
+            {
+                tables.Add(read.GetString(1));
+            }
+           return tables;
+        }
    
       
     }

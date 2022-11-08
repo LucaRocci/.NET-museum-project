@@ -104,5 +104,10 @@ namespace WebAppMupin.Controllers
             return RedirectToAction("Index", "User");
 
         }
+
+        public ActionResult Detail(string id)
+        {
+
+        }
     }
 }
