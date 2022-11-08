@@ -938,19 +938,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\paolo\\.nuget\\packages\\": {}
+    "C:\\Users\\ICTS21-23.105\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\paolo\\Desktop\\Luca\\ITS\\c#\\InsertUser\\InsertUser\\AdministratorApp.csproj",
+      "projectUniqueName": "Z:\\WINDOWS\\project-museum\\.NET-museum-project\\AdministratorApp\\InsertUser\\AdministratorApp.csproj",
       "projectName": "AdministratorApp",
-      "projectPath": "C:\\Users\\paolo\\Desktop\\Luca\\ITS\\c#\\InsertUser\\InsertUser\\AdministratorApp.csproj",
-      "packagesPath": "C:\\Users\\paolo\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\paolo\\Desktop\\Luca\\ITS\\c#\\InsertUser\\InsertUser\\obj\\",
+      "projectPath": "Z:\\WINDOWS\\project-museum\\.NET-museum-project\\AdministratorApp\\InsertUser\\AdministratorApp.csproj",
+      "packagesPath": "C:\\Users\\ICTS21-23.105\\.nuget\\packages\\",
+      "outputPath": "Z:\\WINDOWS\\project-museum\\.NET-museum-project\\AdministratorApp\\InsertUser\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\paolo\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\ICTS21-23.105\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -1004,7 +1004,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.401\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.402\\RuntimeIdentifierGraph.json"
       }
     }
   }

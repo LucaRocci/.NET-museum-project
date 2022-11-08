@@ -11,7 +11,7 @@ namespace InsertUser
 
         private void Btn_invia_Click(object sender, EventArgs e)
         {
-            string ConnStr = "server=127.0.0.1;port=3308;username=root;password=;database=login_mupin";
+            string ConnStr = "server=127.0.0.1;port=3306;username=root;password=;database=museoinformaticatest";
             bool flag = true;
            
             if(textBoxNome.Text.Length < 2 || textBoxCognome.Text.Length <2)
@@ -63,11 +63,6 @@ namespace InsertUser
                     MessageBox.Show(ex.ToString());
                 }
             }
-        }
-
-        private void label4_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void button1_Click(object sender, EventArgs e)
